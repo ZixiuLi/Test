@@ -1,0 +1,1 @@
+awk 'BEGIN {n_seq=0;} /^>/ {if(n_seq%1==0){file=sprintf("%d.fa",n_seq);} print >> file; n_seq++; next;} { print >> file; }' tmp1.fa

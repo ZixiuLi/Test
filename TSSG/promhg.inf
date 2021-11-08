@@ -1,0 +1,148 @@
+                               Program  promHG
+                               ---------------
+
+ACTION: Search for TSS and TATA box localization for TATA-promoters 
+        and TSS for TATA-less  Promoters in 2 Homologous   (aligned
+        in the Special Format) DNA sequences
+
+SEARCH CONDITIONS: (1) LDF Score   for  any TSS  predicted  must be
+        greater than a given Treshold given (different for TATA and
+        TATA-less promoters);
+                   (2) Initially  all  TSSs  with  Initial LDF score
+        (calculated  without  using Information of Homology Level of
+        Local Search Area [-100..TSS..+50], as in TSSW)  higher than
+        the Initial Threshold (See Result File)  are  selected;  then
+        a Final LDF score is calculated by using  the  corresponding
+        Initial LDF score and Information on Homology Level of Local
+        Local Search Area mentioned; 
+                   (3) At last, for  any  pair  of   predicted  TSS,
+        located within 300 bp from each other, only one with highest
+        LDF score  is retained, exept for  one  case   (if  a  lower
+        scoring  position is  predicted  by the  LDF  for  TATA-less
+        promoter near a higher scoring position predicted by LDF for
+        TATA promoters   then the first position is also retained as
+        a potential  Enhancer region).
+                   (4) It is not necessary that  TSS(s) predicted in
+        one sequence must be exsist also in the homologous sequence.
+..............................................................
+
+AUTHORS:	    I.A.Shahmuradov   &   V.V.Solovyev
+
+LAST UPDATE:	    17 March, 2003
+
+ACCESS:             http://softberry.com
+
+------------------------------------------------------------------------
+
+
+	        	program  PromHG
+
+	Search for TATA+/TATA- Promoters in 2 Aligned DNA sequences 
+
+	V.V.Solovyev  &  I.A.Shahmuradov
+	October, 2001
+
+	http://softberry.com
+------------------------------------------------------------------------
+
+ Run Program:	promhg   [-i:<parI> -h:<parH> -a:<parA> [-o:<parO>]]
+
+
+ Options/Arguments:	
+	-i:<parI>
+		<parI> : Input File  with 1st Query DNA sequence  
+			 in the FASTA format
+		
+			  For example:   >SEQ 1 (name)
+					  ............. (sequence)	   	
+					  ............. (sequence)	   	
+
+
+	If this option/argument is absent  OR  number of arguments is more than
+  	4  OR  no any arguent is given,  Program display  HELP information and
+	ends.
+
+	NOTE. In Query sequences symbols besides of "a/A", "g/G", "c/C" and
+              "t/T" are accepted as "N". 
+
+........................................................................
+	-h:<parH>
+		<parH> : Input File with 2nd (homologous) Query DNA sequence  
+			 in the FASTA format
+		
+
+	If this option/argument is absent  OR  number of arguments is more than
+  	4  OR  no any arguent is given,  Program display  HELP information and
+	ends.
+
+	NOTE. In Query sequences symbols besides of "a/A", "g/G", "c/C" and
+              "t/T" are accepted as "N". 
+
+........................................................................
+	-a:<parA>
+		<parA> : File of Alignment of 2 homologous sequences           
+                         (in the Special Format of SBL program) 
+		
+
+	If this option/argument is absent  OR  number of arguments is more than
+  	11  OR  no any arguent is given,  Program display  HELP information and
+	ends.
+
+
+	NOTE 1. To get a File of Alignment, run:
+
+sbl <parI: SEQ 1> <parH: SEQ 2, hom> -o:weak.cfg -S:2 -D:0 > <parA: Align.>
+
+
+	ATTENTION!!!  In SBL command line the 1st SEQ file must
+                      be given <parI> and the 2nd SEQ file must
+                      be given <parH>.
+
+........................................................................
+	-o:<parO>
+		<parO> : Output File  
+
+			 Default Output File: "promhg.res.res"
+
+------------------------------------------------------------------------
+DESCRIPTION  OF OUTPUT FILE (Default: promhg.res)
+
+
+Every OUTPUT file begins with description of the Program's allocation,Search 
+Parameters and used Abbreviations.
+
+After this "INTRODUCTION" Search Results are given in the following FORMAT:
+====================================================================
+>  <Name and length of an analyzing sequence>
+
+Initial / Final Thresholds for TATA+ promoters
+Initial / Final Thresholds for TATA-/enhancers 
+
+<How many Promoter/enhancers have been predicted>
+
+<Promoter position> (<LDF>)  <TATA box at (for only TATA+ promoters)> (<LDF>)
+
+<PHa> <PHs> <PHss> <PHt (for only TATA+ promoters)> <PHr) 
+
+.....................................................................
+.....................................................................
+
+Transcription factor binding sites:
+for promoter at position -     <...> 
+
+---------------------------------------------------------------------
+>  <Name and length of the following sequence>
+
+.....................................................................
+.....................................................................
+
+Transcription factor binding sites:
+for promoter at position -     <...> 
+
+
+
+NOTE: PHa  - Homology Level of Aligned Sequences in LOCAL Search Area, (-100,+40)
+      PHs  - Homology Level of Aligned Sequences around TSS, (TSS-4,TSS+4)
+      PHss - Homology Level of Aligned Sequences to Right from TSS, (TSS+1,TSS+40)
+      PHt  - Homology Level of TATA-boxes in Aligned Sequences (14 nt) 
+      PHr  - Mean Homology Level of Regulatory Elements in LOCAL Search Area

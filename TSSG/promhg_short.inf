@@ -1,0 +1,11 @@
+ RUN: 	promhg   [-i:<parI> -h:<parH> -a:<parA> [-o:<parO>]]
+ 
+ Options/Arguments:	
+
+ <parI>  Input File  with 1st Query DNA sequence in the FASTA format
+ <parH>  Input File with 2nd  Query DNA sequence in the FASTA format
+ <parA>  File of Alignment of 2 homologous sequences by SBL 
+ <parO>  Output File  (Default: promhg.res)
+ 
+
+ For more information run "promhg" without arguments:  promhg 

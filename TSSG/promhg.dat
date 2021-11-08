@@ -1,0 +1,29 @@
+100 41
+  4  5
+200
+100
+0.75
+1.0
+1.0
+1.0
+1.0
+1.0
+5.0
+ 
+
+
+
+Attention!
+
+ 1st Line: Length of the Area LEFT and RIGHT to TSS [lbound1, lbound2] (2i3) 
+ 2nd Line: Length of the Area Directly LEFT & RIGHT to TSS [ltss1,ltss2] (2i3)
+ 3th Line: Length of the Area Directly LEFT to TSS for CONS.Level of REs on (+) strand [lup1] (i3)
+ 4th Line: Length of the Area Directly LEFT to TSS for CONS.Level of REs on (-) strand [lup2] (i3)
+ 5th Line: Fixed Difference Level for  GAPs   
+ 6th Line: Conservativity Coefficient for PHs
+ 7th Line: Conservativity Coefficient for PHt
+ 8th Line: Conservativity Coefficient for PHr
+ 9th Line: Conservativity Coefficient for PHss
+10th Line: porinit
+11th Line: porfinal 
+ 

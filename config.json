@@ -1,0 +1,24 @@
+{
+    "file_config": {
+        "hisat2index": "/nl/umw_chan_zhou/Liz/LncRNA_pipeline_Python/LncRNA_pipeline/DATA_LIB/HISAT2_index/genome",
+        "known_splice_site": "/nl/umw_chan_zhou/Liz/LncRNA_pipeline_Python/LncRNA_pipeline/DATA_LIB/gencode.v29.annotation.splice_site.txt",
+        "rRNA": "/nl/umw_chan_zhou/Liz/LncRNA_pipeline_Python/LncRNA_pipeline/DATA_LIB/hg38_rRNA.bed",
+        "StringTie_gtf": "/nl/umw_chan_zhou/Liz/LncRNA_pipeline_Python/LncRNA_pipeline/DATA_LIB/gencode.v29.annotation.gtf",
+        "Strawberry_gtf": "/nl/umw_chan_zhou/Liz/LncRNA_pipeline_Python/LncRNA_pipeline/DATA_LIB/gencode.v29.annotation.SortByAlphabet.gtf",
+        "genome_sequence": "/nl/umw_chan_zhou/Liz/LncRNA_pipeline_Python/LncRNA_pipeline/DATA_LIB/hg38.fa",
+        "Six_types": "/nl/umw_chan_zhou/Liz/LncRNA_pipeline_Python/LncRNA_pipeline/DATA_LIB/FiveTypeRNA/Six_types.RNA.bed",
+        "Five_types": "/nl/umw_chan_zhou/Liz/LncRNA_pipeline_Python/LncRNA_pipeline/DATA_LIB/FiveTypeRNA/Five_types.RNA.bed",
+        "CPAT_hex": "/nl/umw_chan_zhou/Liz/LncRNA_pipeline_Python/LncRNA_pipeline/DATA_LIB/CPAT/Human_Hexamer.tsv",
+        "CPAT_logitmodel": "/nl/umw_chan_zhou/Liz/LncRNA_pipeline_Python/LncRNA_pipeline/DATA_LIB/CPAT/Human_logitModel.RData",
+        "CPPred_human_hexamer": "/nl/umw_chan_zhou/Liz/LncRNA_pipeline_Python/LncRNA_pipeline/DATA_LIB/CPPred_20180516/Hexamer/Human_Hexamer.tsv",
+        "CPPred_human_range": "/nl/umw_chan_zhou/Liz/LncRNA_pipeline_Python/LncRNA_pipeline/DATA_LIB/CPPred_20180516/Human_Model/Human.range",
+        "CPPred_human_model": "/nl/umw_chan_zhou/Liz/LncRNA_pipeline_Python/LncRNA_pipeline/DATA_LIB/CPPred_20180516/Human_Model/Human.model",
+        "protein_coding_tss": "/nl/umw_chan_zhou/Liz/LncRNA_pipeline_Python/LncRNA_pipeline/DATA_LIB/protein_coding_gencodev29.TSS",
+        "protein_coding_gtf": "/nl/umw_chan_zhou/Liz/LncRNA_pipeline_Python/LncRNA_pipeline/DATA_LIB/protein_coding_gencodev29.gtf",
+        "transcript_type": "/nl/umw_chan_zhou/Liz/LncRNA_pipeline_Python/LncRNA_pipeline/DATA_LIB/Different_Type_RNA.bed",
+        "chr_length": "/nl/umw_chan_zhou/Liz/LncRNA_pipeline_Python/LncRNA_pipeline/DATA_LIB/chrNameLength.txt"
+    },
+    "software_config": {
+        "CPPred_path": "/nl/umw_chan_zhou/Liz/LncRNA_pipeline_Python/LncRNA_pipeline/DATA_LIB/CPPred_20180516/bin"         
+    }
+}
